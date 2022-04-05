@@ -33,8 +33,7 @@ module.exports.userController = {
     if (!candidate) {
       return res.status(401).json("Error, not valid LOGIN");
     }
-    console.log(password + "pass");
-    console.log(candidate + "candidate");
+
     const valid = await bcrypt.compare(password, candidate.password);
 
     if (!valid) {
@@ -47,7 +46,7 @@ module.exports.userController = {
     };
 
     const token = await jwt.sign(payload, process.env.SECRET_JWT_KEY, {
-      expiresIn: "24h",
+      expiresIn: "48d",
     });
 
     res.json(token);

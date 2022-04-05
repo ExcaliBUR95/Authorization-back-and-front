@@ -95,7 +95,7 @@ export const auth = (login, password) => {
     } else {
       dispatch({ type: "application/signin/fulfilled", payload: json });
 
-      localStorage.setItem("token", json.token);
+      localStorage.setItem("token", json);
     }
   };
 };

@@ -11,7 +11,7 @@ const HomePage = () => {
   const error = useSelector((state) => state.todos.error);
   console.log(todos);
   useEffect(() => {
-    dispatch(fetchTodos);
+    dispatch(fetchTodos());
   }, [dispatch]);
 
   if (loading) {

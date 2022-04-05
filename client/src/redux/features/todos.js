@@ -41,7 +41,7 @@ export const fetchTodos = () => {
         },
       });
       const json = await res.json();
-
+      console.log(json);
       if (json.error) {
         dispatch({
           type: "todos/fetch-todos/rejected",
